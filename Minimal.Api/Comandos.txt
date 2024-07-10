@@ -1,0 +1,20 @@
+# dotnet new web Minimal.API
+
+# dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+
+# dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection
+
+# docker build -t minimalapi -f Dockerfile .
+# docker inspect minimalapi
+# docker run -d -p 8081:8080 --rm minimalapi
+# docker logs minimalapi 
+# docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=P455w0rd#" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2019-latest
+# docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=P455w0rd#" -p 1433:1433 -v sqlvolume:/var/opt/mssql -d mcr.microsoft.com/mssql/server:2019-latest
+# docker exec -it <mycontainer> /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P P455w0rd#
+    # select physical_database_name from sys.databases
+
+# dotnet add package Microsoft.EntityFrameworkCore.Design
+# dotnet ef migrations add InitialCreate
+# dotnet ef database update
+
+# dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer
